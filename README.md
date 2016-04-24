@@ -3,7 +3,7 @@ Shows income and outcome overviews based on a list of transactions.
 
 ## Expected features
 
-* Montly income/outcome overview
+* Monthly income/outcome overview
 * Categorize transactions by filters
 * Store categories and filters
 
