@@ -4,9 +4,9 @@
   "description": "Gives you an overview of income and outcome over a certain period, like a month",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -t [ babelify ] main.js -o bundle.js",
-    "watch": "watchify -t [ babelify ] main.js -o bundle.js -v"
+    "test": "jest",
+    "build": "browserify -t [ babelify ] js/app.react.js -o bundle.js",
+    "watch": "watchify -t [ babelify ] js/app.react.js -o bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,14 @@
   "dependencies": {
     "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
+    "papaparse": "^4.1.2",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "taffy": "^2.6.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "jest": "^15.1.1",
+    "watchify": "^3.7.0"
   }
 }
