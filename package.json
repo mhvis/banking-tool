@@ -21,6 +21,7 @@
   "dependencies": {
     "babel-preset-react": "^6.16.0",
     "babelify": "^7.3.0",
+    "moment": "^2.15.1",
     "papaparse": "^4.1.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",

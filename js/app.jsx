@@ -49,18 +49,10 @@ var InputCSVText = React.createClass({
       var bankNr = value[2];
       var otherBankNr = value[3];
       var code = value[4];
-      var inOut;
-      switch (value[5]) {
-        case "Af":
-          inOut = "out";
-          break;
-        case "Bij":
-          inOut = "in";
-          break;
-        default:
-          throw new Error("Invalid in/out (Af/Bij) value: " + value[5]);
-      }
       var amount = parseFloat(value[6].replace(',', '.'));
+      if (value[5] == "Af") {
+        amount *= -1;
+      }
       var mutationType = mutationTypes[value[7]];
       if (!mutationType) {
         throw new Error("Invalid mutation type: " + value[7]);
@@ -74,7 +66,6 @@ var InputCSVText = React.createClass({
         bankNr: bankNr,
         otherBankNr: otherBankNr,
         code: code,
-        inOut: inOut,
         amount: amount,
         mutationType: mutationType,
         message: message
@@ -106,7 +97,7 @@ var TransactionText = React.createClass({
       str += new Date(record.date).toDateString();
       str += '\n';
       str += record.name + ' ' + record.bankNr + ' ' + record.otherBankNr;
-      str += ' ' + record.code + ' ' + record.inOut + ' ' + record.amount;
+      str += ' ' + record.code + ' ' + record.amount;
       str += ' ' + record.mutationType + '\n';
       str += record.message;
       return str;
@@ -129,16 +120,13 @@ var MonthlyAverage = React.createClass({
     var firstDate = new Date(db().first().date);
     var lastDate = new Date(db().last().date);
     var monthDifference = Util.getMonthDifference(lastDate, firstDate);
-    var totalIn = db({inOut: 'in'}).sum('amount');
-    var totalOut = db({inOut: 'out'}).sum('amount');
-    var monthlyIn = totalIn / monthDifference;
-    var monthlyOut = totalOut / monthDifference;
+    var total = db().sum('amount');
+    var monthly = total / monthDifference;
     return (
       <div>
         <h3>Average monthly income/outcome</h3>
         <p>
-          <span>Income: {monthlyIn}</span><br/>
-          <span>Outcome: {monthlyOut}</span>
+          <span>{monthly}</span><br/>
         </p>
       </div>
     )
@@ -177,5 +165,4 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(
-  <App/>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
