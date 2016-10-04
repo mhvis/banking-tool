@@ -5,9 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "jest",
-    "build": "NODE_ENV=development browserify -t [babelify] js/app.jsx -o bundle.js",
-    "build-production": "NODE_ENV=production browserify -t [babelify envify uglifyify] js/app.jsx | uglifyjs -c > bundle.js",
-    "watch": "NODE_ENV=development watchify -t [babelify] js/app.jsx -o bundle.js -v"
+    "build": "NODE_ENV=development browserify -t [babelify] js/App.jsx -o bundle.js",
+    "build-production": "NODE_ENV=production browserify -t [babelify envify uglifyify] js/App.jsx | uglifyjs -c > bundle.js",
+    "watch": "NODE_ENV=development watchify -t [babelify] js/App.jsx -o bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -20,20 +20,29 @@
   },
   "homepage": "https://github.com/mhvis/income-outcome#readme",
   "dependencies": {
-    "babel-preset-react": "^6.16.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.1.0",
-    "envify": "^3.4.1",
+    "material-ui": "^0.15.4",
     "moment": "^2.15.1",
     "papaparse": "^4.1.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "taffy": "^2.6.2",
-    "uglify-js": "^2.7.3",
-    "uglifyify": "^3.0.3"
+    "react-tap-event-plugin": "^1.0.0",
+    "taffy": "^2.6.2"
   },
   "devDependencies": {
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "envify": "^3.4.1",
     "jest": "^15.1.1",
+    "uglify-js": "^2.7.3",
+    "uglifyify": "^3.0.3",
     "watchify": "^3.7.0"
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ]
   }
 }

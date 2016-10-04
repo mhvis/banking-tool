@@ -1,7 +1,13 @@
 // vim: expandtab softtabstop=2 shiftwidth=2
 
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import TransactionsOverview from './TransactionsOverview.jsx';
+
 // Hack below
 var Taffy = require('../node_modules/taffy/lib/taffy.js').taffy;
 var Papa = require('papaparse');
@@ -140,7 +146,7 @@ var AddLabel = React.createClass({
   render: function() {}
 })
 
-var App = React.createClass({
+var AppApp = React.createClass({
   dbUpdate: function() {
     this.setState({db: this.state.db});
   },
@@ -165,4 +171,20 @@ var App = React.createClass({
   }
 });
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const Page = () => (
+  <div>
+    <AppApp />
+    <TransactionsOverview />
+  </div>
+);
+
+const App = () => (
+  <MuiThemeProvider>
+    <Page />
+  </MuiThemeProvider>
+);
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('app')
+);
