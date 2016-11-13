@@ -1,31 +1,30 @@
 {
-  "name": "income-outcome",
+  "name": "ing-banking-tool",
   "version": "1.0.0",
-  "description": "Gives you an overview of income and outcome over a certain period, like a month",
-  "main": "main.js",
+  "description": "Gives you an overview of how you are spending your money",
+  "main": "js/app",
   "scripts": {
     "test": "jest",
-    "build": "NODE_ENV=development browserify -t [babelify] js/App.jsx -o bundle.js",
-    "build-production": "NODE_ENV=production browserify -t [babelify envify uglifyify] js/App.jsx | uglifyjs -c > bundle.js",
-    "watch": "NODE_ENV=development watchify -t [babelify] js/App.jsx -o bundle.js -v"
+    "build": "NODE_ENV=production browserify -t [envify uglifyify] js/app.js | uglifyjs - --screw-ie8 --compress --mangle --lint > bundle.js",
+    "watch": "NODE_ENV=development watchify -d js/app.js -o bundle.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mhvis/income-outcome.git"
+    "url": "git+https://github.com/mhvis/ing-banking-tool.git"
   },
   "author": "Maarten Visscher",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/mhvis/income-outcome/issues"
+    "url": "https://github.com/mhvis/ing-banking-tool/issues"
   },
-  "homepage": "https://github.com/mhvis/income-outcome#readme",
+  "homepage": "https://github.com/mhvis/ing-banking-tool#readme",
   "dependencies": {
-    "material-ui": "^0.15.4",
     "moment": "^2.15.1",
     "papaparse": "^4.1.2",
     "react": "^15.3.2",
+    "react-date-range": "^0.2.4",
     "react-dom": "^15.3.2",
-    "react-tap-event-plugin": "^1.0.0",
+    "react-plotlyjs": "^0.3.7",
     "taffy": "^2.6.2"
   },
   "devDependencies": {
@@ -39,10 +38,9 @@
     "uglifyify": "^3.0.3",
     "watchify": "^3.7.0"
   },
-  "babel": {
-    "presets": [
-      "latest",
-      "react"
+  "browserify": {
+    "transform": [
+      "babelify"
     ]
   }
 }
