@@ -101,7 +101,7 @@ class App extends React.Component {
             <Card>
               <CardTitle title="Welkom" />
               <CardText>
-                Deze site is nog in ontwikkeling, maar kan wel uitgeprobeerd worden. Als je ideeën of feedback hebt kun je dit laten weten via <a href="https://github.com/mhvis/banking-tool/issues/new">GitHub</a>.
+                Deze site is nog in ontwikkeling, maar kan wel uitgeprobeerd worden. Als je ideeën of feedback hebt kun je dit laten weten via <a href="https://github.com/mhvis/banking-tool/issues/new">GitHub</a>. Een overzicht van functies waar op dit moment aan gewerkt wordt kan gevonden worden op de <a href="https://github.com/mhvis/banking-tool/projects/1">project pagina</a>.
               </CardText>
             </Card>
             <h1 style={{marginTop: '40px'}}>ING transactieoverzicht</h1>
