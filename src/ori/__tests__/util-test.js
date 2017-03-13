@@ -1,4 +1,4 @@
-var Util = require('../js/util');
+var Util = require('../util');
 
 describe('getMonthDifference', () => {
   test('same year', () => {

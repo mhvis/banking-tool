@@ -1,6 +1,6 @@
 // vim: expandtab softtabstop=2 shiftwidth=2
 
-import DbUtil from '../js/dbutil';
+import DbUtil from '../dbutil';
 import {taffy as Taffy} from 'taffy/lib/taffy';
 
 var template = {

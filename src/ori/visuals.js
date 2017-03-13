@@ -1,6 +1,3 @@
-// vim: expandtab softtabstop=2 shiftwidth=2
-'use strict';
-
 import React from 'react';
 import Plotly from 'react-plotlyjs';
 import DbUtil from './dbutil';

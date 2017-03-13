@@ -1,6 +1,3 @@
-// vim: expandtab softtabstop=2 shiftwidth=2
-'use strict';
-
 import React from 'react';
 import Papa from 'papaparse';
 

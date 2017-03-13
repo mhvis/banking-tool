@@ -1,9 +1,5 @@
-// vim: expandtab softtabstop=2 shiftwidth=2
-
-'use strict';
-
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 import {taffy as Taffy} from 'taffy/lib/taffy';
 import Util from './util';
@@ -11,6 +7,10 @@ import Util from './util';
 import Input from './input';
 import Visuals from './visuals';
 import RangeSlider from './range-slider';
+
+import './css/normalize.css';
+import './css/skeleton.css';
+
 
 /*
 var TransactionText = React.createClass({
@@ -98,7 +98,13 @@ class App extends React.Component {
       <div className='container'>
         <div className='row'>
           <div className='column' style={{marginTop: '10%'}}>
-            <h1>ING transactieoverzicht</h1>
+            <Card>
+              <CardTitle title="Welkom" />
+              <CardText>
+                Deze site is nog in ontwikkeling, maar kan wel uitgeprobeerd worden. Als je ideeën of feedback hebt kun je dit laten weten via <a href="https://github.com/mhvis/banking-tool/issues/new">GitHub</a>.
+              </CardText>
+            </Card>
+            <h1 style={{marginTop: '40px'}}>ING transactieoverzicht</h1>
             <p>
               Deze tool laat in de vorm van enkele grafiekjes een overzicht
               zien van inkomsten en uitgaven, op basis van een lijst

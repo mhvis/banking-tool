@@ -4,12 +4,14 @@
   "private": true,
   "author": "Maarten Visscher",
   "dependencies": {
+    "material-ui": "^0.17.1",
     "moment": "^2.15.1",
     "papaparse": "^4.1.2",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2",
     "react-date-range": "^0.2.4",
+    "react-dom": "^15.4.2",
     "react-plotlyjs": "^0.3.7",
+    "react-tap-event-plugin": "^2.0.1",
     "taffy": "^2.6.2"
   },
   "devDependencies": {
